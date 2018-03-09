@@ -5,7 +5,7 @@ const Entry         = require('../../models/journal-entry');
 router.get('/journal-entries', (req, res, next) => {
   Entry.find({}, (err, entries) => {
     if (err) { return res.json(err).status(500); }
-
+    console.log(entries);
     return res.json(entries);
   });
 });
@@ -20,6 +20,7 @@ router.get('/journal-entries/:id', (req, res, next) => {
 });
 
 router.post('/journal-entries', (req, res, next) => {
+  console.log("hai");
   const newEntry = new Entry({
     title: req.body.title,
     content: req.body.content

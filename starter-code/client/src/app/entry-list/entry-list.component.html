@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor = "let entry of journals">
+            <div>
+                    <a [routerLink]="['../', entry._id]">{{entry.title}}</a>
+                {{entry.date}}
+            </div>
+    </li>
+</ul>
+
+<app-entry-form></app-entry-form>
